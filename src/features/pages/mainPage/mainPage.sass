@@ -1,0 +1,149 @@
+@import '../../../style/variables'
+
+.promo
+    padding: 40px 0
+    background: url('../../../assets/mainPage/bg.jpg') left top / contain no-repeat
+    &__wrapper
+        max-width: 50vw
+        margin-left: 50%
+    &__title
+        margin-bottom: 25px
+    &__descr
+        font-size: 18px
+        line-height: 31px
+        text-align: center
+        letter-spacing: 0.025em
+        margin-bottom: 35px
+    &__menu-wrapper
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+    &__themes
+        position: relative
+        &::after
+            position: absolute
+            content: ''
+            top: 0
+            right: -30%
+            background: $orange
+            height: 100%
+            width: 1px
+    &__theme
+        margin-bottom: 35px
+        font-size: 18px
+        line-height: 23px
+        text-align: right
+        letter-spacing: 0.06em
+        &:last-child
+            margin-bottom: 0
+    &__link
+        color: $orange
+        text-decoration: none
+        transition: .3s
+        &:hover
+            color: $gray
+    &__quote
+        margin-left: 14px
+        max-width: 50%
+        font-style: italic
+        line-height: 107.1%
+        &__wrapper
+            display: flex
+            align-items: center
+            max-width: 70%
+            background: $light-gray
+
+.reviews
+    padding-bottom: 30px
+    &__all
+        position: relative
+        width: 100%
+        height: 300px
+        background: url('../../../assets/mainPage/portfolio.jpg') center center / cover no-repeat
+        text-align: center
+        margin-bottom: 70px
+    &__title
+        position: absolute
+        bottom: 25%
+        right: 50%
+        transform: translateX(50%)
+        font-family: Raleway
+        font-size: 30px
+        letter-spacing: -0.065em
+        color: #FFFFFF
+        text-transform: uppercase
+    &__btn
+        position: absolute
+        bottom: 3%
+        right: 50%
+        transform: translateX(50%)
+    &__taste__title
+        position: relative
+        margin-bottom: 50px
+        text-align: center
+        font-size: 70px
+        font-weight: bold
+        letter-spacing: -0.06em
+        text-transform: uppercase
+        color: $orange
+        padding-bottom: 35px
+        span
+            position: absolute
+            bottom: 0
+            right: 30%
+            font-size: 18px
+            font-weight: normal
+            letter-spacing: 0.015em
+            text-transform: uppercase
+            color: $dark-gray
+            margin-top: -30px
+        &::after
+            position: absolute
+            content: ''
+            top: -15%
+            left: 0
+            width: 65vw
+            height: 1px
+            background: $orange
+        &::before
+            position: absolute
+            content: ''
+            bottom: -15%
+            right: 0
+            width: 65vw
+            height: 1px
+            background: $orange
+    &__last
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
+    &__item
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        max-width: 30%
+        text-align: center
+        &::after
+            position: absolute
+            content: ''
+            top: 5%
+            left: 5%
+            width: 90%
+            height: 90%
+            background: $light-gray
+            z-index: 0
+        &__title
+            font-size: 26px
+            text-transform: uppercase
+            line-height: 120.4%
+            color: $orange
+            margin-bottom: 19px
+            z-index: 3
+        &__descr
+            font-size: 17px
+            line-height: 126.6%
+            letter-spacing: 0.015em
+            margin-bottom: 15px
+            z-index: 3
