@@ -1,0 +1,36 @@
+@import '../../style/variables'
+
+.filters
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    justify-content: space-around
+    min-height: 250px
+    &::after
+        position: absolute
+        content: ''
+        top: 0
+        right: -30%
+        background: $orange
+        height: 100%
+        width: 1px
+    &_post-list
+        align-items: flex-start
+        &::after
+            left: -5%
+.filter
+    font-size: 18px
+    line-height: 23px
+    text-align: right
+    letter-spacing: 0.06em
+    &__link
+        color: $orange
+        text-decoration: none
+        transition: .3s
+        &:hover
+            color: $gray
+        &_post-list
+            color: #000000
+            &:hover
+                color: $orange

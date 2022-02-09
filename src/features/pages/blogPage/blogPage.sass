@@ -1,0 +1,25 @@
+@import '../../../style/variables'
+
+.blog-page
+    padding: 70px 0
+    text-align: center
+    &__title
+        margin-bottom: 20px
+    &__descr
+        position: relative
+        max-width: 500px
+        margin: 0 auto
+        letter-spacing: 0.015em
+        line-height: 126.6%
+        color: $dark-gray
+        margin-bottom: 70px
+        &::before
+            position: absolute
+            content: ''
+            bottom: -15%
+            left: 5%
+            width: 90%
+            height: 1px
+            background: $orange
+        span
+            font-weight: bold

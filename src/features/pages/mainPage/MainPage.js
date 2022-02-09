@@ -1,3 +1,5 @@
+import Filters from '../../filters/Filters';
+
 import './mainPage.sass';
 
 const MainPage = () => {
@@ -10,7 +12,8 @@ const MainPage = () => {
                         <h2 className="promo__title title">Пиздатый подзаголовок</h2>
                         <p className="promo__descr">Милая цитата. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         <div className="promo__menu-wrapper">
-                            <ul className="promo__themes">
+                            <Filters/>
+                            {/* <ul className="promo__themes">
                                 <li className="promo__theme">
                                     <a href="!#" className="promo__link">Фильмы</a>
                                 </li>
@@ -26,7 +29,7 @@ const MainPage = () => {
                                 <li className="promo__theme">
                                     <a href="!#" className="promo__link">Что-то ещё</a>
                                 </li>
-                            </ul>
+                            </ul> */}
                             <div className="promo__quote__wrapper">
                                 <p className="promo__quote">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
