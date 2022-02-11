@@ -11,16 +11,16 @@ const Navigation = () => {
         <nav className="nav">
             <ul>
                 <li>
-                    <a href="!#" className="nav__link">Главная страница</a>
+                    <Link to="/" className="nav__link">Главная страница</Link>
                 </li>
                 <li>
-                    <a href="!#" className="nav__link">Обо мне</a>
+                    <Link to="/about" className="nav__link">Обо мне</Link>
                 </li>
                 <li>
-                    <a href="!#" className="nav__link">Рецензии</a>
+                    <Link to="/reviews" className="nav__link">Рецензии</Link>
                 </li>
                 <li>
-                    <a href="!#" className="nav__link">Контакты</a>
+                    <Link to="/contacts" className="nav__link">Контакты</Link>
                 </li>
             </ul>
         </nav>

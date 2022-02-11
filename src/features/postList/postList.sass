@@ -1,8 +1,9 @@
 @import '../../style/variables'
 
 .post-list
-    display: flex
-    justify-content: space-between
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 30px
     &__categories
         display: flex
         flex-wrap: wrap
@@ -10,7 +11,7 @@
         padding: 20px
         height: 300px
         background: $cream
-        width: 95%
+        width: 100%
         margin-bottom: 30px
         &__filters
             flex-grow: 3
@@ -19,37 +20,6 @@
             letter-spacing: 0.055em
             flex-grow: 1
     &__items
-        justify-self: end
         &_right
             .post-list__item
                 margin-left: auto
-    &__item
-        text-align: left
-        margin-bottom: 30px
-        width: 95%
-        &__title
-            font-family: Raleway
-            letter-spacing: -0.08em
-            color: $dark-gray
-            margin-bottom: 15px
-            font-weight: bold
-        &__info
-            display: flex
-            flex-wrap: wrap
-            font-style: italic
-            font-size: 12px
-            letter-spacing: 0.045em
-            margin-bottom: 20px
-        &__date
-            margin-right: 5px
-        &__category
-            margin-left: 5px
-        &__img
-            max-width: 100%
-            object-fit: cover
-            margin-bottom: 25px
-        &__descr
-            line-height: 113.6%
-            margin-bottom: 10px
-        &__link
-            margin-left: 10px

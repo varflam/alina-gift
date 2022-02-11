@@ -8,8 +8,11 @@ export const alinaApiSlice = createApi({
     endpoints: builder => ({
         getPosts: builder.query({
             query: () => '/posts'
+        }),
+        getPost: builder.query({
+            query: id => `/posts/${id}`
         })
     })
 });
 
-export const { useGetPostsQuery } = alinaApiSlice;
+export const { useGetPostsQuery, useGetPostQuery } = alinaApiSlice;
