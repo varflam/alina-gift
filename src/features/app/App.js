@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Navigation from '../navigation/Navigation';
 import MainPage from '../pages/mainPage/MainPage';
@@ -12,6 +13,8 @@ import Footer from '../footer/Footer';
 import '../../style/style.sass';
 
 function App() {
+  const activeFilter = useSelector(state => state.filters.activeFilter);
+
   return (
     <Router>
       <div className="app">
@@ -21,6 +24,7 @@ function App() {
             <Route path="contacts" element={<ContactPage/>}/>
             <Route path="/about" element={<AboutPage/>}/>
             <Route path="/reviews" element={<BlogPage/>}/>
+            <Route path={`/reviews/${activeFilter}`} element={<BlogPage/>}/>
             <Route path="/reviews/:id" element={<SinglePostPage/>}/>
           </Routes>
         <Footer/>

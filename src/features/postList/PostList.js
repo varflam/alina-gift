@@ -1,3 +1,6 @@
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+
 import Filters from '../filters/Filters';
 import PostListItem from '../postListItem/PostListItem';
 import {useGetPostsQuery} from '../../api/apiSlice';
@@ -5,9 +8,21 @@ import {useGetPostsQuery} from '../../api/apiSlice';
 import './postList.sass';
 
 const PostList = () => {
+    const activeFilter = useSelector(state => state.filters.activeFilter);
+
     const {
         data: posts = []
     } = useGetPostsQuery();
+
+    const filteredPosts = useMemo(() => {
+        const filteredPosts = posts.slice();
+
+        if (activeFilter === 'all') {
+            return filteredPosts;
+        } else {
+            return filteredPosts.filter(item => item.tag === activeFilter);
+        }
+    }, [activeFilter, posts]);
 
     const leftPosts = [];
     const rightPosts = [];
@@ -22,15 +37,17 @@ const PostList = () => {
         });
     }
 
-    uploadPosts(posts);
+    uploadPosts(filteredPosts);
+    
+    const renderPostList = (arr) => {
+        if (arr.length === 0) {
+            return <p className='post-list__items__empty'>Извините, рецензий на эту тему пока нет</p>
+        }
 
-    const left = leftPosts.map(({id, ...props}) => {
-        return <PostListItem key={id} id={id} {...props}/>
-    });
-
-    const right = rightPosts.map(({id, ...props}) => {
-        return <PostListItem key={id} id={id} {...props}/>
-    });
+        return arr.map(({id, ...props}) => {
+            return <PostListItem key={id} id={id} {...props}/>
+        });
+    }
 
     return(
         <div className="container">
@@ -42,10 +59,10 @@ const PostList = () => {
                             <Filters postList/>
                         </div>
                     </div>
-                    {left}
+                    {leftPosts.length !== 0 ? renderPostList(leftPosts) : null}
                 </ul>
                 <ul className="post-list__items_right">
-                    {right}
+                    {renderPostList(rightPosts)}
                 </ul>
             </div>
         </div>

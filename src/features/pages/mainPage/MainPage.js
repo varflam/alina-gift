@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { useGetPostsQuery, setText } from '../../../api/apiSlice';
 import Filters from '../../filters/Filters';
+import { setFilter } from '../../filters/filtersSlice';
 
 import './mainPage.sass';
 
 const MainPage = () => {
+    const dispatch = useDispatch();
     const {
         data: posts = []
     } = useGetPostsQuery();
@@ -52,7 +55,10 @@ const MainPage = () => {
             <section className="reviews">
                 <div className="reviews__all">
                     <p className="reviews__title">Все рецензии</p>
-                    <Link to="/reviews" className="btn reviews__btn">ПОСМОТРЕТЬ</Link>
+                    <Link   
+                        to="/reviews" 
+                        className="btn reviews__btn"
+                        onClick={() => dispatch(setFilter('all'))}>ПОСМОТРЕТЬ</Link>
                 </div>
                 <div className="reviews__taste">
                     <div className="container">

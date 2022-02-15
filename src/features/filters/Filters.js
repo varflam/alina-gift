@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { fetchFilters, setFilter } from './filtersSlice';
 
@@ -28,7 +29,7 @@ const Filters = ({postList}) => {
                     key={name} 
                     id={name}
                     onClick={() => dispatch(setFilter(name))}>
-                    <a href="!#" className={linkClasses}>{label}</a>
+                    <Link to={name === 'all' ? '/reviews' : `/reviews/${name}`} className={linkClasses}>{label}</Link>
                 </li>
             )
         })
