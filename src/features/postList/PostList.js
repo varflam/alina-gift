@@ -30,9 +30,9 @@ const PostList = () => {
     const uploadPosts = (arr) => {
         arr.forEach((item, i) => {
             if(i === 0 || i % 2 === 0) {
-                leftPosts.push(item);
-            } else {
                 rightPosts.push(item);
+            } else {
+                leftPosts.push(item);
             }
         });
     }
