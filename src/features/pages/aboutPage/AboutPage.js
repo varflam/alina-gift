@@ -1,4 +1,4 @@
-import src from '../../../assets/contactPage/pic.jpg';
+import src from '../../../assets/aboutPage/alina.jpg';
 
 import './aboutPage.sass';
 

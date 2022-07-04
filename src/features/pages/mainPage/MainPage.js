@@ -41,12 +41,12 @@ const MainPage = () => {
                         <h2 className="promo__title title">Пиздатый подзаголовок</h2>
                         <p className="promo__descr">Милая цитата. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         <div className="promo__menu-wrapper">
-                            <Filters/>
                             <div className="promo__quote__wrapper">
                                 <p className="promo__quote">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
                             </div>
+                            <Filters/>
                         </div>
                     </div>
                 </div>

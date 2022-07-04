@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import Masonry from 'react-masonry-css';
 
 import Filters from '../filters/Filters';
 import PostListItem from '../postListItem/PostListItem';
@@ -23,21 +24,6 @@ const PostList = () => {
             return filteredPosts.filter(item => item.tag === activeFilter);
         }
     }, [activeFilter, posts]);
-
-    const leftPosts = [];
-    const rightPosts = [];
-
-    const uploadPosts = (arr) => {
-        arr.forEach((item, i) => {
-            if(i === 0 || i % 2 === 0) {
-                rightPosts.push(item);
-            } else {
-                leftPosts.push(item);
-            }
-        });
-    }
-
-    uploadPosts(filteredPosts);
     
     const renderPostList = (arr) => {
         if (arr.length === 0) {
@@ -49,21 +35,26 @@ const PostList = () => {
         });
     }
 
+    const breakpointColumnsObj = {
+        default: 2,
+        700: 1
+      };
+
     return(
         <div className="container">
             <div className="post-list">
-                <ul className="post-list__items_left">
+                <Masonry
+                    className="post-list__items"
+                    breakpointCols={breakpointColumnsObj}
+                    columnClassName="my-masonry-grid_column">
                     <div className="post-list__categories">
                         <h3 className="post-list__categories__title">CATEGORIES</h3>
                         <div className="post-list__categories__filters">
                             <Filters postList/>
                         </div>
                     </div>
-                    {leftPosts.length !== 0 ? renderPostList(leftPosts) : null}
-                </ul>
-                <ul className="post-list__items_right">
-                    {renderPostList(rightPosts)}
-                </ul>
+                    {renderPostList(filteredPosts)}
+                </Masonry>
             </div>
         </div>
     )
