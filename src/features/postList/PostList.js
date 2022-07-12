@@ -48,7 +48,7 @@ const PostList = () => {
                     breakpointCols={breakpointColumnsObj}
                     columnClassName="my-masonry-grid_column">
                     <div className="post-list__categories">
-                        <h3 className="post-list__categories__title">CATEGORIES</h3>
+                        <h3 className="post-list__categories__title">Категории</h3>
                         <div className="post-list__categories__filters">
                             <Filters postList/>
                         </div>
