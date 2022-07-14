@@ -44,3 +44,14 @@
             background: $orange
             height: 100%
             width: 1px
+        &_post-list
+            &::before
+                content: none
+
+@media (max-width: 425px)
+    .filters
+        &_post-list
+            min-height: 200px
+    .filter
+        &_post-list
+            font-size: 15px

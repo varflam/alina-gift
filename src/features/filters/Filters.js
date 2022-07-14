@@ -22,10 +22,11 @@ const Filters = ({postList}) => {
 
         return arr.map(({name, label}) => {
             const linkClasses = classNames('filter__link', {'filter__link_post-list' : postList});
+            const filterClasses = classNames('filter', {'filter_post-list' : postList});
 
             return(
                 <li 
-                    className="filter" 
+                    className={filterClasses}
                     key={name} 
                     id={name}
                     onClick={() => dispatch(setFilter(name))}>

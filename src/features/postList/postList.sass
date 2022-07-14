@@ -6,7 +6,7 @@
         flex-wrap: wrap
         align-items: center
         padding: 20px
-        height: 300px
+        max-height: 300px
         background: $cream
         width: 95%
         margin-bottom: 30px
@@ -28,3 +28,12 @@
         display: flex
         flex-direction: column
         align-items: center
+
+@media (max-width: 425px)
+    .post-list
+        &__categories
+            padding: 10px
+            &__filters
+                flex-grow: 1
+            &__title
+                flex-grow: 2
