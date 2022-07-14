@@ -37,7 +37,7 @@ const PostList = () => {
 
     const breakpointColumnsObj = {
         default: 2,
-        700: 1
+        768: 1
       };
 
     return(
